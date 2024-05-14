@@ -1,0 +1,23 @@
+﻿@using WebApp01.Models;
+@model IEnumerable<VideoModel>;
+<div class="row">
+  <div class="col-12">
+       <nav>
+          <ul class="breadcrumb">
+             <li class="breadcrumb-item active"> <a href="@Url.Action("Index", "Home")">Home</a> </li>
+             <li class="breadcrumb-item active"> Videos </li>
+          </ul>
+       </nav>
+  </div>
+</div>
+<div class="row">
+    @foreach (var videos in Model)
+    {
+    <div class="col-4">
+        <h4>@videos.Name</h4>
+        @*<iframe width="300" height="200" src="@Html.Raw(videos.VideoUrl)"> </iframe>
+        *@
+        <iframe width="300" height="200" src="@videos.VideoUrl" frameborder="0" allowfullscreen></iframe>
+    </div>
+    }
+</div>
